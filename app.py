@@ -28,10 +28,29 @@ if st.button("🔍 Analyze News"):
     st.subheader("📊 Analysis Result")
 
     # Demo outputs
-    fake_probability = 78
-    virality = "High"
-    risk = "High Risk 🚨"
+    if "alien" in news.lower() or "secret" in news.lower():
+    fake_probability = 85
+elif "government" in news.lower() or "policy" in news.lower():
+    fake_probability = 35
+else:
+    fake_probability = 60
 
+if fake_probability < 25:
+    risk = "✅ Safe"
+elif fake_probability < 50:
+    risk = "🟡 Monitor"
+elif fake_probability < 75:
+    risk = "🟠 Medium Risk"
+else:
+    risk = "🚨 High Risk"
+
+if fake_probability < 40:
+    virality = "Low"
+elif fake_probability < 70:
+    virality = "Medium"
+else:
+    virality = "High"
+    
     # Metrics
     col1, col2, col3 = st.columns(3)
 
