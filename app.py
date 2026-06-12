@@ -30,11 +30,13 @@ if st.button("🔍 Analyze News"):
     # Demo outputs
     if "alien" in news.lower() or "secret" in news.lower():
     fake_probability = 85
+
 elif "government" in news.lower() or "policy" in news.lower():
     fake_probability = 35
+
 else:
     fake_probability = 60
-
+    
 if fake_probability < 25:
     risk = "✅ Safe"
 elif fake_probability < 50:
